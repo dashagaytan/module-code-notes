@@ -15,3 +15,6 @@ todoForm.addEventListener("submit", function(event){
     .catch(err => console.log(err))
 })
 
+// axios.get("https://api.vschool.io/dashagaytan/todo")
+//     .then(res => console.log(res.data))
+//     .catch(err => console.log(err))

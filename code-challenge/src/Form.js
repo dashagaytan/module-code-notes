@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 function Form(props) {
+    const [form, setForm] = useState({firstname: ''})
   const handleChange = (e) => {
-    //
+    
   };
 
   const handleSubmit = (e) => {

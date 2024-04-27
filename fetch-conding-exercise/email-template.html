@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fetch Email Exercise</title>
+        <link rel="stylesheet" href="style.css" />
+
+        <script type="module">
+            import Handlebars from "https://cdn.jsdelivr.net/npm/handlebars@4.7.8/+esm";
+
+            //Calculate user's age based on "birthDate"
+            Handlebars.registerHelper('calculateAge', function (birthDate) {
+                const birthYear = new Date(birthDate).getFullYear();
+                const todayYear = new Date().getFullYear();
+                return todayYear - birthYear
+            
+            });
+
+            const data ={
+                "birthDate": "1988-10-23"
+            }
+
+            document.body.innerHTML = Handlebars.compile(template.innerHTML)(data);
+
+        </script>
+
+        <script type="application/json" id="data">
+            {
+                "birthDate": "1988-10-23"
+                <!-- "birthDate": "Mon, 23 Oct 1988 19:07:56 GMT" -->
+            }
+        </script>
+    </head>
+
+    <body>
+        <template id="template">        
+            <!-- nav bar -->
+            <nav>
+                <img class="logo" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/Fetch_Logo_Secondary_Horizontal.png"/>
+            </nav>
+
+            <img class="desktop" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/DESKTOP_HDR_1.png"/>
+            <img class="mobileView" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/MOBILE_HDR_1.png"/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan mi vitae neque feugiat, eu venenatis felis tristique. 
+                Quisque facilisis orci eget ante varius, nec scelerisque nulla lacinia. </p> 
+
+            <div class="modules">
+                <img id="fullWidth" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/Fullwidth%20snippet_1.png"/>
+                <img class="half-screen" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/1_1.png"/>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan mi vitae neque feugiat, eu venenatis felis tristique. </p> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan mi vitae neque feugiat, eu venenatis felis tristique. </p> 
+                <img class="half-screen" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/1_1.png"/>
+                <img class="half-screen" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/1_1.png"/>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan mi vitae neque feugiat, eu venenatis felis tristique. </p> 
+            </div>
+
+            <section>
+                <!-- generated media based on users age -->
+                {{#if (calculateAge birthDate "<" 35)}}
+                <div class="social-blocks">
+                    <img alt="tik-tok" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_TIKTOK_MOBILE.ENG%20%282%29.png" />
+                    <img alt="insta" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_INSTAGRAM_MOBILE.ENG%20%281%29_1.png" />
+                    <img alt="X" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_X_MOBILE.ENG_1.png">
+                    <img alt="fb" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_FACEBOOK_MOBILE.ENG%20%281%29.png" />
+                </div>
+                {{else}}
+                {{#if (calculateAge birthDate ">=" 35 "<=" 55)}}
+                <div class="social-blocks">
+                    <img alt="insta" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_INSTAGRAM_MOBILE.ENG%20%281%29_1.png" />
+                    <img alt="X" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_X_MOBILE.ENG_1.png">
+                    <img alt="tik-tok" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_TIKTOK_MOBILE.ENG%20%282%29.png" />
+                    <img alt="fb" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_FACEBOOK_MOBILE.ENG%20%281%29.png" />
+                </div>
+                {{else}}
+                <div class="social-blocks">
+                    <img alt="fb" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_FACEBOOK_MOBILE.ENG%20%281%29.png" />
+                    <img alt="X" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_X_MOBILE.ENG_1.png">
+                    <img alt="insta" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_INSTAGRAM_MOBILE.ENG%20%281%29_1.png" />
+                    <img alt="tik-tok" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/editor_images/DSN2-6828%20%20%20Social%20Invite%20Email%20Refresh_MODULE_TIKTOK_MOBILE.ENG%20%282%29.png" />
+                </div>
+                    {{/if}}
+                {{/if}}
+            </section>
+
+            <section>
+                <footer class="footer">
+                    <a href="https://www.fetch.com"><img class="footerImg" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8154cab5f1b44d7828db857ef3be885/Fetch_Logo_Primary_Stacked.png"/></a>
+                    <p>&copy 2024 <em>Fetch Rewards, Inc. All rights reserved</em></p>
+                    <p><a class="maps"
+                        href="https://maps.app.goo.gl/eutTVetE2kZgtmdWA">1050 E. Washington Ave.</a> 2nd Fl, Madison, WI 53703</p>
+                </footer>
+            </section>
+
+        </body>
+        </template> 
+</html>

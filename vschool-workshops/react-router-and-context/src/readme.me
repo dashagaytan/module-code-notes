@@ -1,0 +1,68 @@
+Context 
+React-Router-Dom
+FSJS
+
+___________________
+Context
+1.  Sharing Data Across Components 
+    - Share data across components in your React app without prop drilling 
+
+2.  Global State Management
+    - use context for simpler state management in smaller React apps.
+
+3.  Create Themes or Local Providers
+    - set application-wide themes or local preferences with context
+
+4.   Providers/Consumers
+    - Providers hold context values, Consumers access themes
+
+5.  Limitations
+    - avoid overuse for complex data flows
+
+___________________
+React-Router-Dom
+1.  Navigation
+    - building dynamic navigation experiences with components and urls
+
+2.  Routing 
+    - define routes and map them to React components for rendering 
+
+3.  Links
+    - create easy-to-use components for in-app navigation
+
+4.  Paramenters
+    - capture dynamic url segments using parameters for flexible Routing
+
+5. History Mangement 
+    -manages the browser history for seamless user experience
+
+ROUTES 
+- - - - - -
+BrowserRouter: 
+    - set up client-side routing infrastructure.
+    - Uses HTML5 history API.
+    - should be the root component for routing.
+
+Routes: 
+    - container for defining route config
+    - encloses multiple 'Route' component
+    - promotes organized and centralized route definitions.
+
+Route:
+    - associates a specific path with a React component
+    - uses 'path' prop for URL pattern
+    - uses 'element' prop for the corresponding component
+
+CODE EXAMPLE:
+____________________
+
+<BrowserRouter>
+    <Navbar />
+    <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/products" element={<Products/>}/>
+        <Route path="/products/:productId" element={<ProducntDetails/>}/>
+    </Routes>
+</BrowserRouter>
+
+___________________
